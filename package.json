@@ -1,0 +1,27 @@
+{
+  "name": "mailhero",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "docker compose -f docker/dev.compose.yml up -d && bun --env-file=env/dev.env run --hot src/index.tsx",
+    "prod": "bun --env-file=env/prod.env run --hot src/index.tsx",
+    "stop": "docker compose -f docker/dev.compose.yml down",
+    "email": "email dev --dir src/mail",
+    "build": "bun build ./src/index.tsx --minify --sourcemap --outdir ./build --target bun",
+    "compile": "bun build src/index.tsx --compile --minify --sourcemap --outfile build/app"
+  },
+  "dependencies": {
+    "@react-email/components": "^0.0.33",
+    "@types/nodemailer": "^6.4.17",
+    "nodemailer": "^6.10.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.1",
+    "bun-types": "latest",
+    "react-email": "^3.0.7"
+  },
+  "module": "src/index.js"
+}
