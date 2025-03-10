@@ -104,7 +104,7 @@ docker run -it --rm -v "${pwd}:/app" -v /var/run/docker.sock:/var/run/docker.soc
 
 On Nushell, run the following command:
 ```shell
-docker run -it --rm -v $"(pwd):/app" -v /var/run/docker.sock:/var/run/docker.sock dslim/slim --archive-state off --crt-api-version=1.25 build --dockerfile /docker/bun.Dockerfile --tag-fat mailhero:bun-slim --tag mailhero:bun-slimed --include-path /bin --http-probe-off --continue-after=1 /app
+docker run -it --rm -v $"(pwd):/app" -v /var/run/docker.sock:/var/run/docker.sock dslim/slim --archive-state off --crt-api-version=1.25 build --dockerfile /docker/bun.Dockerfile --tag-fat mailhero:bun-slim --tag mailhero:bun-slimmed --include-path /bin --http-probe-off --continue-after=1 /app
 ```
 
 ## Build debian distroless and debian distroless slimed images
